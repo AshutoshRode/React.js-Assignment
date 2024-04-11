@@ -1,3 +1,17 @@
+import UserList from "../components/UserList";
+
+
 export default function HomePage() {
-  return <div>Home page</div>;
+
+  const fetchUsers = async () =>{
+      try {
+          const res = await fetch('https://jsonplaceholder.typicode.com/users')
+         
+      } catch (error) {
+          console.error(error)
+      }
+  }
+  
+
+  return <UserList usersData={fetchUsers()} />;
 }
